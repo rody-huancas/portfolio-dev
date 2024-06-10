@@ -1,32 +1,41 @@
 ---
+import Sidebar from "@/components/layout/Sidebar.astro";
+import { ViewTransitions } from "astro:transitions";
 import "@/styles/main.css";
 
 interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{`Rody - ${title}`}</title>
+    <title>{`Rody Huancas ${title ? `- ${title}` : ""}`}</title>
+
+	
+    <ViewTransitions fallback="none" />
   </head>
   <body>
-    <slot />
+   <div class="bg-dark-color text-primary-100 h-screen w-full overflow-hidden flex gap-10">
+	 <Sidebar />
+	 <main>
+	   <slot />
+	 </main>
+   </div>
   </body>
 </html>
 
 <style is:global>
   html {
     font-family: "CircularStd", system-ui, sans-serif;
-    background: #121212;
   }
 
   @font-face {
