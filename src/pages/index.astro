@@ -1,30 +1,40 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 // icons
+import PointIcon from "@/icons/PointIcon.astro";
+
+// layouts
 import Layout from "@/layouts/Layout.astro";
 
 // data
-import { SOCIAL_MEDIA } from '@/lib/data';
+import { SOCIAL_MEDIA } from "@/lib/data";
 
 // components
-import ItemSocial from '@/components/home/ItemSocial.astro';
+import ItemSocial from "@/components/home/ItemSocial.astro";
+import CardProject from "@/components/projects/CardProject.astro";
 ---
 
 <Layout>
   <section class="flex flex-col gap-10">
+    <div class="w-full flex items-start justify-between">
+      <Image src="/icons/favicon.svg" alt="Logo" width="50" height="50" />
 
-    <Image
-      src="/icons/favicon.svg"
-      alt="Logo"
-      width="50" 
-      height="50"
-    />
+      <a
+        href="/contact"
+        class="bg-[#03e26b]/5 py-3 px-4 hover:bg-[#03e26b]/10 text-[#03e26b] rounded-lg flex items-center justify-center transition-colors duration-300 ease-out"
+      >
+        <PointIcon />
+        Libre para trabajar
+      </a>
+    </div>
 
     <div class="flex flex-col gap-7">
       <h1 class="text-primary-100/90 text-5xl flex flex-col gap-3 font-bold">
         Hola, soy Rody
-        <span class="font-normal text-primary-100/80 text-4xl">Desarrollador Full Stack</span>
+        <span class="font-normal text-primary-100/80 text-4xl"
+          >Desarrollador Full Stack</span
+        >
       </h1>
       <span class="text-xl text-primary-200 text-balance font-light">
         +1 año como desarrollador Full Stack, me apasiona la tecnología y creo
@@ -34,11 +44,22 @@ import ItemSocial from '@/components/home/ItemSocial.astro';
     </div>
 
     <div class="flex items-center gap-5">
-      {
-        SOCIAL_MEDIA.map(social => (
-          <ItemSocial social={social} />
-        ))
-      }
+      {SOCIAL_MEDIA.map((social) => <ItemSocial social={social} />)}
     </div>
+  </section>
+
+  <section class="my-16 flex flex-col gap-7">
+    <h3 class="text-2xl text-primary-100/90">Proyectos Destacados</h3>
+
+    <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10">
+      <CardProject />
+      <CardProject />
+      <CardProject />
+    </div>
+    <a
+      href="/projects"
+      class="w-full text-center mt-5 border border-primary-200/80 py-3 text-primary-100/90 rounded-md font-medium uppercase hover:bg-primary-200/10 transition-colors duration-500 ease-in-out"
+      >Ver todos los proyectos</a
+    >
   </section>
 </Layout>
