@@ -1,6 +1,7 @@
-import AboutIcon from "@/icons/AboutIcon.astro";
-import ContactIcon from "@/icons/ContactIcon.astro";
-import HomeIcon from "@/icons/HomeIcon.astro";
+import BlogIcon      from "@/icons/BlogIcon.astro";
+import HomeIcon      from "@/icons/HomeIcon.astro";
+import AboutIcon     from "@/icons/AboutIcon.astro";
+import ContactIcon   from "@/icons/ContactIcon.astro";
 import ProjectsIncon from "@/icons/ProjectsIncon.astro";
 import type { MenuInteface } from "@/models/sidebar";
 
@@ -19,6 +20,11 @@ export const MENU: MenuInteface[] = [
     path: "/about",
     name: "Sobre Mí",
     icon: AboutIcon,
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    icon: BlogIcon,
   },
   {
     path: "/contact",

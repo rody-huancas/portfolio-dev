@@ -6,9 +6,13 @@ interface Props {
 }
 
 const { data } = Astro.props;
+
+const pathname = Astro.url.pathname;
 ---
 
-<li class="flex items-center border-y border-primary-200/40 hover:text-primary-100 hover:bg-primary-200/10 transition-colors duration-500 ease-linear">
+<li
+  class={`flex items-center border-y border-primary-200/40 transition-colors duration-500 ease-linear ${pathname === data.path ? "text-secondary bg-primary-200/10" : "hover:text-primary-100 hover:bg-primary-200/10"}`}
+>
   <a href={data.path} class="flex items-center gap-2 w-full py-5 px-10">
     <data.icon />
     {data.name}
