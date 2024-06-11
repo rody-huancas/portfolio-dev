@@ -1,11 +1,13 @@
-import BlogIcon      from "@/icons/BlogIcon.astro";
-import HomeIcon      from "@/icons/HomeIcon.astro";
-import FileIcon      from "@/icons/FileIcon.astro";
-import AboutIcon     from "@/icons/AboutIcon.astro";
-import GithubIcon    from "@/icons/GithubIcon.astro";
-import ContactIcon   from "@/icons/ContactIcon.astro";
-import LinkedinIcon  from "@/icons/LinkedinIcon.astro";
-import ProjectsIncon from "@/icons/ProjectsIncon.astro";
+
+import BlogIcon      from "@/assets/icons/BlogIcon.astro";
+import FileIcon      from "@/assets/icons/FileIcon.astro";
+import HomeIcon      from "@/assets/icons/HomeIcon.astro";
+import AboutIcon     from "@/assets/icons/AboutIcon.astro";
+import GithubIcon    from "@/assets/icons/GithubIcon.astro";
+import ContactIcon   from "@/assets/icons/ContactIcon.astro";
+import LinkedinIcon  from "@/assets/icons/LinkedinIcon.astro";
+import ProjectsIncon from "@/assets/icons/ProjectsIncon.astro";
+import type { ProjectsInteface } from "@/models/project";
 import type { MenuInteface, SocialMediaInteface } from "@/models/sidebar";
 
 export const MENU: MenuInteface[] = [
@@ -53,3 +55,13 @@ export const SOCIAL_MEDIA: SocialMediaInteface[] = [
     icon: FileIcon,
   },
 ];
+
+export const PROJECTS: ProjectsInteface[] = [
+  {
+    url   : "https://tinttrail.netlify.app/",
+    name  : "TintTrail",
+    slug  : ["JavaScript", "TypeScript", "React", "Tailwind"],
+    image : "/images/projects/tinttrail.webp",
+    github: "https://github.com/rody-huancas/TintTrail-app",
+  }
+]

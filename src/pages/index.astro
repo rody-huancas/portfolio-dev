@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 
 // icons
-import PointIcon from "@/icons/PointIcon.astro";
+import PointIcon from "@/assets/icons/PointIcon.astro";
 
 // layouts
 import Layout from "@/layouts/Layout.astro";
 
 // data
-import { SOCIAL_MEDIA } from "@/lib/data";
+import { SOCIAL_MEDIA, PROJECTS } from "@/lib/data";
 
 // components
 import ItemSocial from "@/components/home/ItemSocial.astro";
@@ -25,7 +25,7 @@ import CardProject from "@/components/projects/CardProject.astro";
         class="bg-[#03e26b]/5 py-3 px-4 hover:bg-[#03e26b]/10 text-[#03e26b] rounded-lg flex items-center justify-center transition-colors duration-300 ease-out"
       >
         <PointIcon />
-        Libre para trabajar
+        Disponible para trabajar
       </a>
     </div>
 
@@ -52,9 +52,11 @@ import CardProject from "@/components/projects/CardProject.astro";
     <h3 class="text-2xl text-primary-100/90">Proyectos Destacados</h3>
 
     <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10">
-      <CardProject />
-      <CardProject />
-      <CardProject />
+      {
+        PROJECTS.map(project => (
+          <CardProject project={project} />
+        ))
+      }
     </div>
     <a
       href="/projects"
