@@ -5,3 +5,9 @@ export interface MenuInteface {
   name: string;
   icon: AstroComponentFactory;
 }
+
+export interface SocialMediaInteface {
+  path: string;
+  name: string;
+  icon: AstroComponentFactory;
+}

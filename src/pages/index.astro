@@ -1,8 +1,44 @@
 ---
+import { Image } from 'astro:assets';
+
+// icons
 import Layout from "@/layouts/Layout.astro";
 
+// data
+import { SOCIAL_MEDIA } from '@/lib/data';
+
+// components
+import ItemSocial from '@/components/home/ItemSocial.astro';
 ---
 
 <Layout>
-  Principal
+  <section class="flex flex-col gap-10">
+
+    <Image
+      src="/icons/favicon.svg"
+      alt="Logo"
+      width="50" 
+      height="50"
+    />
+
+    <div class="flex flex-col gap-7">
+      <h1 class="text-primary-100/90 text-5xl flex flex-col gap-3 font-bold">
+        Hola, soy Rody
+        <span class="font-normal text-primary-100/80 text-4xl">Desarrollador Full Stack</span>
+      </h1>
+      <span class="text-xl text-primary-200 text-balance font-light">
+        +1 año como desarrollador Full Stack, me apasiona la tecnología y creo
+        proyectos de código libre. Transformo ideas en realidad a través del
+        código. ¡Bienvenido a mi portafolio!
+      </span>
+    </div>
+
+    <div class="flex items-center gap-5">
+      {
+        SOCIAL_MEDIA.map(social => (
+          <ItemSocial social={social} />
+        ))
+      }
+    </div>
+  </section>
 </Layout>

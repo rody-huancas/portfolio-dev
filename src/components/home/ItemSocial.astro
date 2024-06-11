@@ -1,0 +1,18 @@
+---
+import type { SocialMediaInteface } from '@/models/sidebar';
+
+interface Props {
+  social: SocialMediaInteface;
+}
+
+const { social } = Astro.props;
+---
+
+<a
+  href={social.path}
+  target="_blank"
+  class="py-2 px-4 rounded-lg flex items-center justify-center gap-2 transition-colors duration-500 ease-linear bg-primary-100/85 text-dark-color"
+>
+  <social.icon />
+  {social.name}
+</a>

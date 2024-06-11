@@ -3,7 +3,7 @@ import { MENU } from "@/lib/data";
 import ItemMenu from "./ItemMenu.astro";
 ---
 
-<aside class="w-80 border-r border-primary-200/40 flex flex-col">
+<aside class="min-w-80 border-r border-primary-200/25 flex flex-col">
   <div class="flex flex-col gap-2 p-10">
     <a
       href="/"
@@ -14,9 +14,7 @@ import ItemMenu from "./ItemMenu.astro";
 
   <nav class="w-full">
     <ul class="flex flex-col text-primary-200">
-      {MENU.map((data) => (
-        <ItemMenu data={data} />
-      ))}
+      {MENU.map((data) => <ItemMenu data={data} /> )}
     </ul>
   </nav>
 </aside>
