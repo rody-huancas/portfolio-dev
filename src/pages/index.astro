@@ -13,6 +13,7 @@ import { SOCIAL_MEDIA, PROJECTS } from "@/lib/data";
 // components
 import ItemSocial from "@/components/home/ItemSocial.astro";
 import CardProject from "@/components/projects/CardProject.astro";
+import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
 ---
 
 <Layout>
@@ -48,20 +49,17 @@ import CardProject from "@/components/projects/CardProject.astro";
     </div>
   </section>
 
-  <section class="my-16 flex flex-col gap-7">
+  <section class="mt-16 mb-7 flex flex-col gap-7">
     <h3 class="text-2xl text-primary-100/90">Proyectos Destacados</h3>
 
-    <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10">
+    <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10 mb-5">
       {
         PROJECTS.map(project => (
           <CardProject project={project} />
         ))
       }
     </div>
-    <a
-      href="/projects"
-      class="w-full text-center mt-5 border border-primary-200/80 py-3 text-primary-100/90 rounded-md font-medium uppercase hover:bg-primary-200/10 transition-colors duration-500 ease-in-out"
-      >Ver todos los proyectos</a
-    >
+    
+    <ButtonRedirect path="/projects" title="Ver todos los proyectos" />
   </section>
 </Layout>
