@@ -1,12 +1,13 @@
 
-import BlogIcon      from "@/assets/icons/BlogIcon.astro";
-import FileIcon      from "@/assets/icons/FileIcon.astro";
-import HomeIcon      from "@/assets/icons/HomeIcon.astro";
-import AboutIcon     from "@/assets/icons/AboutIcon.astro";
-import GithubIcon    from "@/assets/icons/GithubIcon.astro";
-import ContactIcon   from "@/assets/icons/ContactIcon.astro";
-import LinkedinIcon  from "@/assets/icons/LinkedinIcon.astro";
-import ProjectsIncon from "@/assets/icons/ProjectsIncon.astro";
+import BlogIcon       from "@/assets/icons/BlogIcon.astro";
+import FileIcon       from "@/assets/icons/FileIcon.astro";
+import HomeIcon       from "@/assets/icons/HomeIcon.astro";
+import AboutIcon      from "@/assets/icons/AboutIcon.astro";
+import GithubIcon     from "@/assets/icons/GithubIcon.astro";
+import ContactIcon    from "@/assets/icons/ContactIcon.astro";
+import LinkedinIcon   from "@/assets/icons/LinkedinIcon.astro";
+import ProjectsIncon  from "@/assets/icons/ProjectsIcon.astro";
+import ExperienceIcon from "@/assets/icons/ExperienceIcon.astro";
 import type { ProjectsInteface } from "@/models/project";
 import type { MenuInteface, SocialMediaInteface } from "@/models/sidebar";
 
@@ -15,6 +16,11 @@ export const MENU: MenuInteface[] = [
     path: "/",
     name: "Inicio",
     icon: HomeIcon,
+  },
+  {
+    path: "/experience",
+    name: "Experiencia",
+    icon: ExperienceIcon,
   },
   {
     path: "/projects",
