@@ -1,0 +1,17 @@
+---
+import UrlIcon from "@/assets/icons/UrlIcon.astro";
+
+interface Props {
+  path?: string;
+}
+
+const { path } = Astro.props;
+---
+
+{
+  path && (
+    <a href={path} target="_blank">
+      <UrlIcon />
+    </a>
+  )
+}

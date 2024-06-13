@@ -61,7 +61,14 @@ export const PROJECTS: ProjectsInteface[] = [
     url   : "https://tinttrail.netlify.app/",
     name  : "TintTrail",
     slug  : ["JavaScript", "TypeScript", "React", "Tailwind"],
-    image : "/images/projects/tinttrail.webp",
+    image : "/images/tinttrail.webp",
     github: "https://github.com/rody-huancas/TintTrail-app",
-  }
+  },
+  {
+    url   : "https://rody-trailflix-react.netlify.app/",
+    name  : "TraiFlix",
+    slug  : ["JavaScript", "React", "Redux Toolkit", "Tailwind"],
+    image : "/images/trailflix.webp",
+    github: "https://github.com/rody-huancas/PAF-react-redux-tmdb/",
+  },
 ]

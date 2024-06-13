@@ -1,8 +1,25 @@
 ---
+
+// icons
+
+// layouts
 import Layout from "@/layouts/Layout.astro";
 
+// data
+import { PROJECTS } from "@/lib/data";
+
+// components
+import CardProject from "@/components/projects/CardProject.astro";
 ---
 
-<Layout title="Proyectos">
-  <div>Proyectos</div>
+<Layout>
+  <section class="mb-7 flex flex-col gap-7">
+    <h3 class="text-2xl text-primary-100/90">Mis Proyectos</h3>
+
+    <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10 mb-5">
+      {
+        PROJECTS.map(project => <CardProject project={project} /> )
+      }
+    </div>
+  </section>
 </Layout>

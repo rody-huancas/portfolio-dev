@@ -1,0 +1,17 @@
+---
+import GithubIcon from "@/assets/icons/GithubIcon.astro";
+
+interface Props {
+  path?: string;
+}
+
+const { path } = Astro.props;
+---
+
+{
+  path && (
+    <a href={path} target="_blank">
+      <GithubIcon />
+    </a>
+  )
+}
