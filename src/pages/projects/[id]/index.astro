@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+
+// layout
 import Layout from "@/layouts/Layout.astro";
 
 // data
@@ -8,7 +11,6 @@ import { PROJECTS } from "@/lib/data";
 import UrlIcon from "@/assets/icons/UrlIcon.astro";
 import BackIcon from "@/assets/icons/BackIcon.astro";
 import GithubIcon from "@/assets/icons/GithubIcon.astro";
-import { Image } from "astro:assets";
 
 const { id } = Astro.params;
 
@@ -22,11 +24,11 @@ if (!project) {
 <Layout>
   <section class="flex flex-col gap-10 my-10">
     <div class="flex flex-col gap-5">
-      <a href="/projects" class="text-primary-100/60 flex items-center gap-3">
+      <a href="/projects" class="text-primary-100/60 hover:text-primary-100/90 transition-colors duration-300 flex items-center gap-3">
         <BackIcon /> Regresar
       </a>
       <h1
-        class="text-3xl text-primary-100"
+        class="text-3xl text-primary-100 mt-3"
         transition:name={`project ${project.name}`}
       >
         {project.name}

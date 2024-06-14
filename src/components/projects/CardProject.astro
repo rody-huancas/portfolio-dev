@@ -32,7 +32,7 @@ const { project } = Astro.props;
   <div class="flex flex-col gap-3 p-5">
     <div class="flex items-center justify-between">
       <h4
-        class="text-xl font-bold text-secondary"
+        class="text-xl font-medium text-primary-100/95"
         transition:name={`project ${project.name}`}
       >
         {project.name}
@@ -46,10 +46,10 @@ const { project } = Astro.props;
 
     <p class="line-clamp-2 text-primary-100/75">{project.description}</p>
 
-    <div class="flex flex-wrap items-center justify-center gap-3">
+    <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
       {
         project.slug.map((slug) => (
-          <span class="bg-primary-100/20 px-2 py-1 rounded-md">{slug}</span>
+          <span class="bg-primary-100/20 px-3 text-primary-100/70 py-1 rounded-lg">{slug}</span>
         ))
       }
     </div>
