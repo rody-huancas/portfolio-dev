@@ -1,10 +1,20 @@
 ---
-// layouts
+// data
+import { EXPERIENCE } from "@/lib/data";
+
+// layout
 import Layout from "@/layouts/Layout.astro";
+
+// components
+import ItemExperience from "@/components/experience/ItemExperience.astro";
 ---
 
 <Layout>
   <section class="mb-7 flex flex-col gap-7">
-    <h3 class="text-2xl text-primary-100/90">Experiencia</h3>
+    <h3 class="text-2xl text-primary-100/90">Mi Experiencia</h3>
+
+    <ol class="relative border-s border-gray-200 dark:border-gray-700 mt-5">
+      {EXPERIENCE.map((data) => <ItemExperience data={data} />)}
+    </ol>
   </section>
 </Layout>

@@ -9,6 +9,7 @@ import ProjectsIncon from "@/assets/icons/ProjectsIcon.astro";
 import ExperienceIcon from "@/assets/icons/ExperienceIcon.astro";
 import type { ProjectsInteface } from "@/models/project";
 import type { MenuInteface, SocialMediaInteface } from "@/models/sidebar";
+import type { ExperienceInteface } from "@/models/experience";
 
 export const MENU: MenuInteface[] = [
   {
@@ -83,3 +84,19 @@ export const PROJECTS: ProjectsInteface[] = [
       "Es una aplicación que te permite ver los últimos trailers de películas y guardar tus favoritos. Ideal para cinéfilos, TraiFlix ofrece una experiencia sencilla y visual para descubrir nuevas películas y mantener una lista personalizada de los trailers que más te interesan",
   },
 ];
+
+export const EXPERIENCE: ExperienceInteface[] = [
+  {
+    web: "https://www.datec.pe/",
+    company: "Datec Consulting",
+    booth: "Desarrollador Full Stack",
+    date: "Desde marzo del 2023",
+    current: true,
+    letter: "/mi_carta.pdf",
+    description: [
+      "Colaboré en el mantenimiento y la incorporación de nuevas funcionalidades a un sistema ERP existente, logrando mejoras en su rendimiento y facilidad de uso, incluyendo la optimización de tiempos de respuesta en consultas.",
+      "Trabajé estrechamente con usuarios finales para asegurar que el sistema cumpla sus expectativas, mejorando la satisfacción del usuario.",
+      "Colaboré en el desarrollo de una nueva versión del ERP con tecnologías modernas, enfocada en la escalabilidad y eficiencia."
+    ]
+  },
+]

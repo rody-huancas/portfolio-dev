@@ -24,7 +24,10 @@ if (!project) {
 <Layout>
   <section class="flex flex-col gap-10 my-10">
     <div class="flex flex-col gap-5">
-      <a href="/projects" class="text-primary-100/60 hover:text-primary-100/90 transition-colors duration-300 flex items-center gap-3">
+      <a
+        href="/projects"
+        class="text-primary-100/60 hover:text-primary-100/90 transition-colors duration-300 flex items-center gap-3"
+      >
         <BackIcon /> Regresar
       </a>
       <h1
@@ -36,7 +39,12 @@ if (!project) {
 
       <div class="grid grid-cols-3 gap-10 items-start">
         <div class="col-span-2 flex flex-col gap-7">
-          <p class="text-primary-100/75">{project.description}</p>
+          <p
+            class="text-primary-100/75"
+            transition:name={`project ${project.name} description`}
+          >
+            {project.description}
+          </p>
           <div class="flex items-center gap-3">
             <a
               href={project.github}
@@ -58,10 +66,10 @@ if (!project) {
           <span class="font-medium text-lg text-primary-100">
             Tecnologías Usadas:
           </span>
-          <div class="flex flex-wrap items-center justify-center gap-3">
+          <div class="flex flex-wrap items-center justify-start gap-3">
             {
               project.slug.map((slug) => (
-                <span class="bg-primary-100 text-dark-color px-2 py-1 rounded-md">
+                <span class="bg-primary-200/40 text-primary-100/90 px-2 py-1 rounded-md">
                   {slug}
                 </span>
               ))

@@ -1,0 +1,81 @@
+---
+// icons
+import LinkIcon     from "@/assets/icons/LinkIcon.astro";
+import PointIcon    from "@/assets/icons/PointIcon.astro";
+import TimlineIcon  from "@/assets/icons/TimlineIcon.astro";
+import DownloadIcon from "@/assets/icons/DownloadIcon.astro";
+import type { ExperienceInteface } from "@/models/experience";
+
+interface Props {
+  data: ExperienceInteface;
+}
+
+const { data } = Astro.props;
+---
+
+<li class="mb-7 ms-6">
+  <span
+    class="absolute flex items-center justify-center w-6 h-6 p-1.5 rounded-full -start-3 ring-8 ring-primary-200/15 bg-primary-200/50"
+  >
+    <TimlineIcon />
+  </span>
+  <h3 class="flex items-center mb-1 text-lg font-semibold text-primary-100">
+    <span>
+      {data.booth} -
+      <small class="font-normal text-lg text-primary-100/95">
+        {data.company}
+      </small>
+    </span>
+    {
+      data.current && (
+        <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded bg-secondary/85 ms-3">
+          Actualmente
+        </span>
+      )
+    }
+  </h3>
+  <time class="block mb-2 text-sm font-normal leading-none text-primary-200">
+    {data.date}
+  </time>
+  <ul
+    class="mb-4 text-base font-normal text-primary-100/60 flex flex-col gap-3 mt-5"
+  >
+    {
+      data.description &&
+        data.description.map((description) => (
+          <li class="text-balance flex items-start gap-3">
+            <PointIcon />
+            {description}
+          </li>
+        ))
+    }
+  </ul>
+  <div class="flex items-center justify-start gap-5">
+    {
+      data.letter && (
+        <button
+          type="button"
+          aria-label={`Descargar carta de recomendación de ${data.company}`}
+          class="flex items-center justify-center gap-2 text-sm text-primary-100/70 bg-primary-200/30 hover:bg-primary-200/50 transition-colors duration-500 ease-in-out py-2 px-5 rounded"
+        >
+          <DownloadIcon />
+          Carta de Recomendación
+        </button>
+      )
+    }
+    {
+      data.web && (
+        <a
+          href={data.web}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Abrir sitio web de ${data.company} en una nueva pestaña`}
+          class="flex items-center justify-center gap-2 text-sm text-primary-100/70 bg-primary-200/30 hover:bg-primary-200/50 transition-colors duration-500 ease-in-out py-2 px-5 rounded"
+        >
+          <LinkIcon />
+          Ir a la Web
+        </a>
+      )
+    }
+  </div>
+</li>
