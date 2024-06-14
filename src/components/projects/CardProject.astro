@@ -15,7 +15,9 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<div class="flex flex-col justify-between gap-3 w-full rounded-xl bg-[#3a395a3f]">
+<div
+  class="flex flex-col justify-between gap-3 w-full rounded-xl bg-[#3a395a3f]"
+>
   <a href={`/projects/${project.id}`} class="w-full h-full">
     <Image
       src={project.image}
@@ -23,18 +25,24 @@ const { project } = Astro.props;
       class={"w-full object-cover rounded-xl"}
       width={100}
       height={100}
+      transition:name={`project ${project.name} image`}
     />
-    
+
     <div class="flex flex-col gap-3 p-5">
       <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold text-secondary">{project.name}</h4>
-    
-        <div class="flex items-center justify-end gap-3">
+        <h4
+          class="text-xl font-bold text-secondary"
+          transition:name={`project ${project.name}`}
+        >
+          {project.name}
+        </h4>
+
+        <div class="flex items-center justify-end gap-3" >
           <ButtonGithub path={project.github} />
           <ButtonUrl path={project.url} />
         </div>
       </div>
-    
+
       <div class="flex flex-wrap items-center justify-center gap-3">
         {
           project.slug.map((slug) => (
