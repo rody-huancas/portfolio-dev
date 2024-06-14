@@ -1,7 +1,9 @@
 export interface ProjectsInteface {
-  url    : string;
-  name   : string;
-  slug   : string[];
-  image  : string;
-  github?: string;
+  id          : string;
+  url         : string;
+  name        : string;
+  slug        : string[];
+  image       : string;
+  github?     : string;
+  description?: string;
 }
