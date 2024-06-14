@@ -18,38 +18,40 @@ const { project } = Astro.props;
 <div
   class="flex flex-col justify-between gap-3 w-full rounded-xl bg-[#3a395a3f]"
 >
-  <a href={`/projects/${project.id}`} class="w-full h-full">
+  <a href={`/projects/${project.id}`} class="w-full h-full overflow-hidden rounded-xl">
     <Image
       src={project.image}
       alt={`Imagen de ${project.name}`}
-      class={"w-full object-cover rounded-xl"}
+      class={"w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 ease-out"}
       width={100}
       height={100}
       transition:name={`project ${project.name} image`}
     />
+  </a>
 
-    <div class="flex flex-col gap-3 p-5">
-      <div class="flex items-center justify-between">
-        <h4
-          class="text-xl font-bold text-secondary"
-          transition:name={`project ${project.name}`}
-        >
-          {project.name}
-        </h4>
+  <div class="flex flex-col gap-3 p-5">
+    <div class="flex items-center justify-between">
+      <h4
+        class="text-xl font-bold text-secondary"
+        transition:name={`project ${project.name}`}
+      >
+        {project.name}
+      </h4>
 
-        <div class="flex items-center justify-end gap-3" >
-          <ButtonGithub path={project.github} />
-          <ButtonUrl path={project.url} />
-        </div>
-      </div>
-
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        {
-          project.slug.map((slug) => (
-            <span class="bg-primary-100/20 px-2 py-1 rounded-md">{slug}</span>
-          ))
-        }
+      <div class="flex items-center justify-end gap-3">
+        <ButtonGithub path={project.github} />
+        <ButtonUrl path={project.url} />
       </div>
     </div>
-  </a>
+
+    <p class="line-clamp-2 text-primary-100/75">{project.description}</p>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      {
+        project.slug.map((slug) => (
+          <span class="bg-primary-100/20 px-2 py-1 rounded-md">{slug}</span>
+        ))
+      }
+    </div>
+  </div>
 </div>
