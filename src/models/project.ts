@@ -5,5 +5,6 @@ export interface ProjectsInteface {
   slug        : string[];
   image       : string;
   github?     : string;
+  category    : string;
   description?: string;
 }

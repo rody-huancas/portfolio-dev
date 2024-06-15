@@ -65,21 +65,45 @@ export const SOCIAL_MEDIA: SocialMediaInteface[] = [
 export const PROJECTS: ProjectsInteface[] = [
   {
     id: "1",
+    url: "https://app-datec-erp.netlify.app/",
+    name: "ERP Datec",
+    slug: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Zustand",
+      "React Hook Form",
+      "Tailwind",
+      "NestJS",
+      "TypeORM",
+      "PostgreSQL",
+      "Docker",
+    ],
+    image: "/images/erp-datec.webp",
+    github: "",
+    category: "Software",
+    description:
+      "La nueva versión del sistema ERP Datec optimiza y automatiza procesos empresariales con módulos de gestión de inventarios, contabilidad, recursos humanos, ventas y compras. Utiliza tecnologías modernas. Esta versión ofrece mejoras significativas en funcionalidad, usabilidad y escalabilidad, convirtiéndose en una herramienta esencial para la gestión empresarial moderna.",
+  },
+  {
+    id: "2",
     url: "https://tinttrail.netlify.app/",
-    name: "TintTrail",
+    name: "TintTrail - Paleta de Colores",
     slug: ["JavaScript", "TypeScript", "React", "Tailwind"],
     image: "/images/tinttrail.webp",
     github: "https://github.com/rody-huancas/TintTrail-app",
+    category: "Herramientas de Diseño",
     description:
       "TintTrail es una herramienta web diseñada para facilitar la selección de colores y la generación de paletas personalizadas. Al elegir un color, TintTrail crea automáticamente una paleta que se muestra en varios componentes de UI. Además, puedes subir imágenes para extraer colores directamente de ellas, permitiéndote crear combinaciones de colores que complementen tus imágenes.",
   },
   {
-    id: "2",
+    id: "3",
     url: "https://rody-trailflix-react.netlify.app/",
-    name: "TraiFlix",
+    name: "TraiFlix - Trailers de Películas",
     slug: ["JavaScript", "React", "Redux Toolkit", "Tailwind"],
     image: "/images/trailflix.webp",
     github: "https://github.com/rody-huancas/PAF-react-redux-tmdb/",
+    category: "Entretenimiento",
     description:
       "Es una aplicación que te permite ver los últimos trailers de películas y guardar tus favoritos. Ideal para cinéfilos, TraiFlix ofrece una experiencia sencilla y visual para descubrir nuevas películas y mantener una lista personalizada de los trailers que más te interesan",
   },
@@ -96,7 +120,7 @@ export const EXPERIENCE: ExperienceInteface[] = [
     description: [
       "Colaboré en el mantenimiento y la incorporación de nuevas funcionalidades a un sistema ERP existente, logrando mejoras en su rendimiento y facilidad de uso, incluyendo la optimización de tiempos de respuesta en consultas.",
       "Trabajé estrechamente con usuarios finales para asegurar que el sistema cumpla sus expectativas, mejorando la satisfacción del usuario.",
-      "Colaboré en el desarrollo de una nueva versión del ERP con tecnologías modernas, enfocada en la escalabilidad y eficiencia."
-    ]
+      "Colaboré en el desarrollo de una nueva versión del ERP con tecnologías modernas, enfocada en la escalabilidad y eficiencia.",
+    ],
   },
-]
+];

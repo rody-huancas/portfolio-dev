@@ -16,7 +16,10 @@ import CardProject from "@/components/projects/CardProject.astro";
 import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
 ---
 
-<Layout>
+<Layout
+  title="Rody Huancas - Desarrollador Full Stack"
+  description="Contrata a Rody Huancas para crear tu aplicación web o móvil. Desarrollador Full Stack. Especializado en crear aplicaciones únicas."
+>
   <section class="flex flex-col gap-10">
     <div class="w-full flex items-start justify-between">
       <Image src="/icons/favicon.svg" alt="Logo" width="50" height="50" />
@@ -52,14 +55,10 @@ import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
   <section class="mt-16 mb-7 flex flex-col gap-7">
     <h3 class="text-2xl text-primary-100/90">Proyectos Destacados</h3>
 
-    <div class="grid grid-cols-3 items-center gap-x-5 gap-y-10 mb-5">
-      {
-        PROJECTS.map(project => (
-          <CardProject project={project} />
-        ))
-      }
+    <div class="grid lg:grid-cols-2 items-center gap-x-5 gap-y-10 mb-5">
+      {PROJECTS.map((project) => <CardProject project={project} />)}
     </div>
-    
+
     <ButtonRedirect path="/projects" title="Ver todos los proyectos" />
   </section>
 </Layout>

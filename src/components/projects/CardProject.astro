@@ -1,12 +1,11 @@
 ---
-import { Image } from "astro:assets";
-
 // models
 import type { ProjectsInteface } from "@/models/project";
 
 // components
 import ButtonUrl from "../ui/ButtonUrl.astro";
 import ButtonGithub from "../ui/ButtonGithub.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   project: ProjectsInteface;
@@ -15,53 +14,52 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<div
-  class="flex flex-col justify-between gap-3 w-full rounded-xl bg-[#3a395a3f]"
+<a
+  href={`/projects/${project.id}`}
+  class="flex flex-col justify-between gap-3 w-full rounded-xl overflow-hidden card"
+  aria-label={`Detalles del proyecto ${project.name}`}
 >
-  <a
-    href={`/projects/${project.id}`}
-    class="w-full h-full overflow-hidden rounded-xl"
-  >
+  <div class="rounded-xl w-full h-full overflow-hidden">
     <Image
       src={project.image}
-      alt={`Imagen de ${project.name}`}
-      class={"w-full object-cover rounded-xl hover:scale-105 transition-transform duration-300 ease-out"}
+      alt={`Imagen del proyecto ${project.name}`}
+      class="w-full card-image"
       width={100}
       height={100}
       transition:name={`project ${project.name} image`}
     />
-  </a>
+  </div>
 
-  <div class="flex flex-col gap-3 p-5">
-    <div class="flex items-center justify-between">
-      <h4
-        class="text-xl font-medium text-primary-100/95"
-        transition:name={`project ${project.name}`}
-      >
-        {project.name}
-      </h4>
-
-      <div class="flex items-center justify-end gap-3">
-        <ButtonGithub path={project.github} />
-        <ButtonUrl path={project.url} />
-      </div>
-    </div>
-
-    <p
-      class="line-clamp-2 text-primary-100/75"
+  <div class="flex flex-col gap-2 px-2 py-3">
+    <span
+      class="text-primary-100/50"
       transition:name={`project ${project.name} description`}
     >
-      {project.description}
-    </p>
-
-    <div class="flex flex-wrap items-center justify-center gap-3 mt-2">
-      {
-        project.slug.map((slug) => (
-          <span class="bg-primary-100/20 px-3 text-primary-100/70 py-1 rounded-lg">
-            {slug}
-          </span>
-        ))
-      }
-    </div>
+      {project.category}
+    </span>
+    <h4
+      class="text-xl text-primary-100/95 card-title"
+      transition:name={`project ${project.name}`}
+    >
+      {project.name}
+    </h4>
   </div>
-</div>
+</a>
+
+<style>
+  .card-image {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    transition: color 0.5s ease-in-out;
+  }
+
+  .card:hover .card-title {
+    @apply text-secondary;
+  }
+</style>
