@@ -34,12 +34,12 @@ import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
     </div>
 
     <div class="flex flex-col gap-7">
-      <h1 class="text-primary-100/90 text-5xl flex flex-col gap-3 font-bold">
+      <h2 class="text-primary-100/90 text-5xl flex flex-col gap-3 font-bold">
         Hola, soy Rody
         <span class="font-normal text-primary-100/80 text-4xl"
           >Desarrollador Full Stack</span
         >
-      </h1>
+      </h2>
       <span class="text-xl text-primary-200 text-balance font-light">
         +1 año como desarrollador Full Stack, me apasiona la tecnología y creo
         proyectos de código libre. Transformo ideas en realidad a través del
@@ -47,7 +47,7 @@ import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
       </span>
     </div>
 
-    <div class="flex items-center gap-5">
+    <div class="flex items-center flex-wrap gap-5">
       {SOCIAL_MEDIA.map((social) => <ItemSocial social={social} />)}
     </div>
   </section>
@@ -55,10 +55,12 @@ import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
   <section class="mt-16 mb-7 flex flex-col gap-7">
     <h3 class="text-2xl text-primary-100/90">Proyectos Destacados</h3>
 
-    <div class="grid lg:grid-cols-2 items-center gap-x-5 gap-y-10 mb-5">
-      {PROJECTS.map((project) => <CardProject project={project} />)}
+    <div class="grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 items-center gap-x-5 gap-y-10 mb-5">
+      {PROJECTS.slice(0, 2).map((project) => (
+        <CardProject project={project} />
+      ))}
     </div>
-
+    
     <ButtonRedirect path="/projects" title="Ver todos los proyectos" />
   </section>
 </Layout>

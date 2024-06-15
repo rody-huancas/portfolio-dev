@@ -11,8 +11,10 @@ const { social } = Astro.props;
 <a
   href={social.path}
   target="_blank"
-  class="py-2.5 px-6 rounded-lg flex items-center justify-center gap-2 text-primary-100/70 border border-primary-200 hover:bg-primary-200/10 transition-colors duration-200 ease-linear"
+  rel="noopener noreferrer"
+  class="w-full sm:w-auto py-2.5 px-6 rounded-lg flex items-center justify-center gap-2 text-primary-100/70 border border-primary-200 hover:bg-primary-200/10 transition-colors duration-200 ease-linear"
+  aria-label={`Visitar ${social.name}`}
 >
   <social.icon />
-  {social.name}
+  <span>{social.name}</span>
 </a>
