@@ -1,3 +1,30 @@
-<header class="lg:hidden">
-    Aquí va el header
+---
+import { MENU } from "@/lib/data";
+
+const pathname = Astro.url.pathname;
+---
+
+<header
+  class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-50 lg:hidden"
+>
+  <nav
+    class="flex items-center justify-center gap-7 bg-zinc-900 shadow shadow-zinc-700/80 px-7 py-5 rounded-xl text-primary-100/70"
+    aria-label="Primary Navigation"
+  >
+    {
+      MENU.map((data) => (
+        <a
+          href={data.path}
+          class={`${pathname === data.path ? "text-secondary" : "hover:text-primary-100"} transition-colors duration-500 ease-linear md:flex md:flex-col md:items-center md:gap-1`}
+          title={`Ir a ${data.name}`}
+          aria-label={`Ir a ${data.name}`}
+        >
+          <data.icon aria-hidden="true" />
+          <span class="hidden md:block text-sm whitespace-nowrap">
+            {data.name}
+          </span>
+        </a>
+      ))
+    }
+  </nav>
 </header>
