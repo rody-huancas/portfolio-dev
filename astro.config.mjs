@@ -10,7 +10,11 @@ import { manifest, seoConfig } from "./src/utils/seoConfig";
 export default defineConfig({
   output: "server",
   site: seoConfig.baseURL,
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   devToolbar: {
     enabled: false,
   },
