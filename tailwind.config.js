@@ -11,7 +11,8 @@ export default {
           100: "#ffffff",
           200: "#909090"
         },
-        "secondary": "#fca311"
+        "secondary": "#fca311",
+        "tertiary": "#03e26b"
       }
     },
   },
