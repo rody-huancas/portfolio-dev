@@ -6,5 +6,46 @@ import Layout from "@/layouts/Layout.astro";
   title="Rody | Contáctame"
   description="Puedes contactarme llenando el siguiente formulario"
 >
-  <div>Contacto</div>
+  <section class="pb-10 flex flex-col gap-5 md:w-3/4 xl:w-1/2 mx-auto my-10">
+    <h1 class="text-4xl text-primary-100/90 font-medium">Contáctame</h1>
+    <p class="text-primary-100/90 font-light">
+      Si deseas hablar sobre un proyecto potencial o simplemente saludar,
+      envíame un mensaje o un correo electrónico a
+      <a
+        href="mailto:rodyhuancas.04@gmail.com"
+        class="font-medium hover:text-secondary transition-colors duration-300 ease-linear"
+        >rodyhuancas.04@gmail.com</a
+      >
+    </p>
+
+    <form class="flex flex-col gap-5 mt-7">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <input
+          type="text"
+          placeholder="Nombre"
+          class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+        />
+        <input
+          type="text"
+          placeholder="Correo Electrónico"
+          class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+        />
+      </div>
+      <input
+        type="text"
+        placeholder="Asunto"
+        class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+      />
+      <textarea
+        placeholder="Mensaje"
+        class="w-full py-3 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm min-h-28 resize-none"
+      ></textarea>
+
+      <button
+        class="bg-primary-100/85 rounded text-dark-color py-3 hover:bg-primary-100/95 transition-colors duration-500 ease-in-out"
+      >
+        Envíar Mensaje
+      </button>
+    </form>
+  </section>
 </Layout>
