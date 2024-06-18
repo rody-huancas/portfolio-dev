@@ -1,0 +1,76 @@
+<form id="form" class="flex flex-col gap-5 mt-7">
+  <div class="grid sm:grid-cols-2 gap-5">
+    <input
+      type="text"
+      name="from_name"
+      id="from_name"
+      placeholder="Nombre"
+      class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+    />
+    <input
+      type="email"
+      name="from_email"
+      id="from_email"
+      placeholder="Correo Electrónico"
+      class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+    />
+  </div>
+
+  <input
+    type="text"
+    name="subject"
+    id="subject"
+    placeholder="Asunto"
+    class="w-full py-4 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm"
+  />
+  <textarea
+    name="message"
+    id="message"
+    placeholder="Mensaje"
+    class="w-full py-3 px-5 bg-primary-200/10 rounded placeholder:text-primary-100/80 outline-none text-sm min-h-28 resize-none"
+  ></textarea>
+  <button
+    type="submit"
+    id="button"
+    class="bg-primary-100/85 rounded text-dark-color py-3 hover:bg-primary-100/95 transition-colors duration-500 ease-in-out"
+  >
+    Enviar Mensaje
+  </button>
+</form>
+
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailjs = window.emailjs;
+    emailjs.init("nVnrBBEZc-rfZNIpO");
+
+    const form = document.getElementById("form");
+    const btn = document.getElementById("button");
+
+    if (form && btn) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        btn.value = "Sending...";
+
+        const serviceID = "default_service";
+        const templateID = "template_qez2zq1";
+
+        emailjs.sendForm(serviceID, templateID, this).then(
+          () => {
+            btn.value = "Send Email";
+            alert("Sent!");
+          },
+          (err) => {
+            btn.value = "Send Email";
+            alert(JSON.stringify(err));
+          }
+        );
+      });
+    }
+  });
+</script>
