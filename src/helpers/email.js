@@ -7,39 +7,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form_email");
   const btn = document.getElementById("button_send");
 
-  if (form && btn) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      if (validateForm()) {
-        btn.textContent = "Envíando...";
+    if (validateForm()) {
+      btn.textContent = "Envíando...";
 
-        const serviceID = SERVICE_ID;
-        const templateID = TEMPLATE_ID;
+      const serviceID = SERVICE_ID;
+      const templateID = TEMPLATE_ID;
 
-        emailjs.sendForm(serviceID, templateID, this).then(
-          () => {
-            btn.textContent = "Envíar mensaje";
-            alert("Sent!");
-            form.reset();
-            clearErrors();
-          },
-          (err) => {
-            btn.textContent = "Envíar mensaje";
-            alert(JSON.stringify(err));
-          }
-        );
-      }
+      emailjs.sendForm(serviceID, templateID, this).then(
+        () => {
+          btn.textContent = "Envíar mensaje";
+          alert("Sent!");
+          form.reset();
+          clearErrors();
+        },
+        (err) => {
+          btn.textContent = "Envíar mensaje";
+          alert(JSON.stringify(err));
+        }
+      );
+    }
+  });
+
+  const requiredFields = form.querySelectorAll(".input-field");
+
+  requiredFields.forEach((field) => {
+    field.addEventListener("input", function () {
+      validateField(this);
     });
-
-    const requiredFields = form.querySelectorAll(".input-field");
-
-    requiredFields.forEach((field) => {
-      field.addEventListener("input", function () {
-        validateField(this);
-      });
-    });
-  }
+  });
 
   function validateField(field) {
     const errorMessage = field.nextElementSibling;
@@ -69,7 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
     validateField(fromEmail);
     validateField(message);
 
-    if (fromName.classList.contains("error") || fromEmail.classList.contains("error") || message.classList.contains("error")) {
+    if (
+      fromName.classList.contains("error") ||
+      fromEmail.classList.contains("error") ||
+      message.classList.contains("error")
+    ) {
       isValid = false;
     }
 
