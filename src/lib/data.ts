@@ -123,7 +123,7 @@ export const PROJECTS: ProjectsInteface[] = [
     github: "https://github.com/rody-huancas/Quotation-system-php",
     category: "Software",
     description:
-      "Servitech es una plataforma web diseñada para proporcionar información detallada sobre los servicios y productos ofrecidos por la empresa. Desarrollada utilizando JavaScript, React, Tailwind y Sass, esta aplicación presenta una interfaz moderna y atractiva que facilita la navegación y la comprensión de los servicios ofrecidos. Servitech está orientada a mejorar la experiencia del usuario al explorar las soluciones tecnológicas de la empresa, destacando su compromiso con la calidad y la innovación en el sector tecnológico.",
+      "Servitech es un sistema de cotización en línea desarrollado para simplificar el proceso de generar y gestionar cotizaciones de productos y servicios. Utilizando tecnologías como PHP, JavaScript, Bootstrap, CSS y jQuery, esta aplicación ofrece una interfaz intuitiva y fácil de usar. Los usuarios pueden crear cotizaciones personalizadas, administrar clientes y productos, y generar informes detallados, mejorando la eficiencia operativa y la experiencia del cliente.",
   },
   {
     id: "6",
