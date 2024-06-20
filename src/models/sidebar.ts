@@ -10,4 +10,5 @@ export interface SocialMediaInteface {
   path: string;
   name: string;
   icon: AstroComponentFactory;
+  isDownload?: boolean
 }

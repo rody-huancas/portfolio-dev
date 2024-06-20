@@ -33,11 +33,6 @@ export const MENU: MenuInteface[] = [
     icon: AboutIcon,
   },
   {
-    path: "/blog",
-    name: "Blog",
-    icon: BlogIcon,
-  },
-  {
     path: "/contact",
     name: "Contacto",
     icon: ContactIcon,
@@ -56,9 +51,10 @@ export const SOCIAL_MEDIA: SocialMediaInteface[] = [
     icon: GithubIcon,
   },
   {
-    path: "https://www.linkedin.com/in/rody-huancas/",
+    path: "/pdf/HILDER RODY HUANCAS CHUQUIPOMA.pdf",
     name: "Descargar CV",
     icon: FileIcon,
+    isDownload: true
   },
 ];
 
@@ -67,18 +63,7 @@ export const PROJECTS: ProjectsInteface[] = [
     id: "1",
     url: "https://app-datec-erp.netlify.app/",
     name: "ERP Datec",
-    slug: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Zustand",
-      "React Hook Form",
-      "Tailwind",
-      "NestJS",
-      "TypeORM",
-      "PostgreSQL",
-      "Docker",
-    ],
+    slug: [ "JavaScript", "TypeScript", "React", "Zustand", "React Hook Form", "Tailwind", "NestJS", "TypeORM", "PostgreSQL", "Docker" ],
     image: "/images/erp-datec.webp",
     github: "",
     category: "Software",
@@ -87,6 +72,17 @@ export const PROJECTS: ProjectsInteface[] = [
   },
   {
     id: "2",
+    url: "https://alvarorenteria.000webhostapp.com/ProyectoClinica_ci/inicio/",
+    name: "Enfoque Salud - Sistema a Medida",
+    slug: ["JavaScript", "React", "Redux Toolkit", "Tailwind"],
+    image: "/images/enfoque-salud.webp",
+    github: "https://github.com/rody-huancas/clinica-ci/",
+    category: "Software",
+    description:
+      "Enfoque Salud es un sistema integral diseñado para gestionar el control de pacientes, doctores, personal, productos, ventas e historias clínicas. Con una interfaz intuitiva y fácil de usar, este sistema facilita la administración de clínicas y centros de salud, optimizando el manejo de información y mejorando la eficiencia operativa. Además, permite mantener un registro detallado y seguro de los datos médicos, asegurando un seguimiento adecuado de cada paciente.",
+  },
+  {
+    id: "3",
     url: "https://tinttrail.netlify.app/",
     name: "TintTrail - Paleta de Colores",
     slug: ["JavaScript", "TypeScript", "React", "Tailwind"],
@@ -97,7 +93,7 @@ export const PROJECTS: ProjectsInteface[] = [
       "TintTrail es una herramienta web diseñada para facilitar la selección de colores y la generación de paletas personalizadas. Al elegir un color, TintTrail crea automáticamente una paleta que se muestra en varios componentes de UI. Además, puedes subir imágenes para extraer colores directamente de ellas, permitiéndote crear combinaciones de colores que complementen tus imágenes.",
   },
   {
-    id: "3",
+    id: "4",
     url: "https://rody-trailflix-react.netlify.app/",
     name: "TraiFlix - Trailers de Películas",
     slug: ["JavaScript", "React", "Redux Toolkit", "Tailwind"],
