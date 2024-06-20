@@ -117,13 +117,13 @@ export const PROJECTS: ProjectsInteface[] = [
   {
     id: "5",
     url: "https://rodyhuancas.000webhostapp.com/Quotation-system-php/",
-    name: "Servitech",
+    name: "Cotiza Online",
     slug: ["PHP", "JavaScript", "Bootstrap", "CSS", "JQuery"],
     image: "/images/cotizador.webp",
     github: "https://github.com/rody-huancas/Quotation-system-php",
     category: "Software",
     description:
-      "Servitech es un sistema de cotización en línea desarrollado para simplificar el proceso de generar y gestionar cotizaciones de productos y servicios. Utilizando tecnologías como PHP, JavaScript, Bootstrap, CSS y jQuery, esta aplicación ofrece una interfaz intuitiva y fácil de usar. Los usuarios pueden crear cotizaciones personalizadas, administrar clientes y productos, y generar informes detallados, mejorando la eficiencia operativa y la experiencia del cliente.",
+      "Cotiza Online es una plataforma diseñada para facilitar la generación y gestión de cotizaciones en línea. Desarrollada con PHP, JavaScript, Bootstrap, CSS y jQuery, esta aplicación ofrece una interfaz intuitiva que permite a los usuarios crear cotizaciones personalizadas de manera rápida y eficiente. Los usuarios pueden administrar productos y servicios, gestionar clientes y generar informes detallados, optimizando así el proceso de cotización y mejorando la productividad empresarial.",
   },
   {
     id: "6",
@@ -151,10 +151,10 @@ export const PROJECTS: ProjectsInteface[] = [
     id: "8",
     url: "https://rody-search-drinks.netlify.app/",
     name: "Search Drink - Buscador de Bebidas",
-    slug: ["JavaScript", "React", "CSS", "Bootstrap", "Vite"],
+    slug: ["JavaScript", "React", "CSS", "Vite"],
     image: "/images/search-drink.webp",
     github: "https://github.com/rody-huancas/react-search-drinks",
-    category: "Software",
+    category: "Herramientas de Diseño",
     description:
       "Search Drink es una aplicación web que permite a los usuarios buscar bebidas y obtener recetas detalladas. Los usuarios pueden buscar bebidas por nombre y categoría, accediendo a una amplia variedad de opciones. La aplicación se desarrolló utilizando JavaScript, React, CSS y Vite, y consume tres APIs diferentes para proporcionar información precisa y actualizada sobre las bebidas. Ideal para entusiastas de la mixología y aquellos que buscan nuevas recetas para probar.",
   },
