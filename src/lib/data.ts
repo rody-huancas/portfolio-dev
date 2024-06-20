@@ -1,4 +1,3 @@
-import BlogIcon from "@/assets/icons/BlogIcon.astro";
 import FileIcon from "@/assets/icons/FileIcon.astro";
 import HomeIcon from "@/assets/icons/HomeIcon.astro";
 import AboutIcon from "@/assets/icons/AboutIcon.astro";
@@ -178,7 +177,7 @@ export const EXPERIENCE: ExperienceInteface[] = [
     booth: "Desarrollador Full Stack",
     date: "Desde marzo del 2023",
     current: true,
-    letter: "/mi_carta.pdf",
+    letter: "",
     description: [
       "Colaboré en el mantenimiento y la incorporación de nuevas funcionalidades a un sistema ERP existente, logrando mejoras en su rendimiento y facilidad de uso, incluyendo la optimización de tiempos de respuesta en consultas.",
       "Trabajé estrechamente con usuarios finales para asegurar que el sistema cumpla sus expectativas, mejorando la satisfacción del usuario.",
