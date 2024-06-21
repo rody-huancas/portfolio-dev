@@ -8,8 +8,7 @@ import PointIcon from "@/assets/icons/PointIcon.astro";
 import Layout from "@/layouts/Layout.astro";
 
 // data
-import { PROJECTS } from "@/lib/projects";
-import { SOCIAL_MEDIA } from "@/lib/data";
+import { HOME_DATA, PROJECTS, SOCIAL_MEDIA } from "@/lib";
 
 // components
 import ItemSocial from "@/components/home/ItemSocial.astro";
@@ -19,32 +18,31 @@ import ButtonRedirect from "@/components/ui/ButtonRedirect.astro";
 
 <Layout
   title="Rody Huancas - Desarrollador Full Stack"
-  description="Contrata a Rody Huancas para crear tu aplicación web o móvil. Desarrollador Full Stack. Especializado en crear aplicaciones únicas."
+  description="Hilder Rody Huancas Chuquipma, desarrollador Full Stack. Especializado en crear aplicaciones únicas."
 >
   <section class="flex flex-col gap-10">
     <div class="w-full flex items-start justify-between">
-      <Image src="/icons/favicon.svg" alt="Logo" width="50" height="50" />
+      <Image src={HOME_DATA.logo} alt="Logo" width="50" height="50" />
 
       <a
         href="/contact"
         class="bg-tertiary/5 py-3 px-4 hover:bg-tertiary/10 text-tertiary rounded-lg flex items-center justify-center transition-colors duration-300 ease-out"
       >
         <PointIcon />
-        Disponible para trabajar
+        {HOME_DATA.aviable}
       </a>
     </div>
 
     <div class="flex flex-col gap-7">
       <h2 class="text-primary-100/90 text-4xl md:text-5xl flex flex-col gap-3 font-bold">
-        Hola, soy Rody
+        {HOME_DATA.name}
         <span class="font-normal text-primary-100/80 text-2xl md:text-4xl"
-          >Desarrollador Full Stack</span
+          >
+          {HOME_DATA.charge}</span
         >
       </h2>
       <span class="text-lg md:text-xl text-primary-200 md:text-balance font-light">
-        +1 año como desarrollador Full Stack, me apasiona la tecnología y creo
-        proyectos de código libre. Transformo ideas en realidad a través del
-        código. ¡Bienvenido a mi portafolio!
+        {HOME_DATA.description}
       </span>
     </div>
 
